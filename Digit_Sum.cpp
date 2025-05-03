@@ -1,16 +1,21 @@
-#include<bits/stdc++.h>
-using namespace std;
+#include<bits/stdc++.h> // সব স্ট্যান্ডার্ড লাইব্রেরি ইনক্লুড করা হয়েছে
+using namespace std;    // স্ট্যান্ডার্ড নামস্পেস ব্যবহার করা হয়েছে
+
 int main ()
 {
-    int n,sum=0;
-    cout<<"Input the number: ";
-    cin>>n;
-    while(n != 0)
+    int n, sum=0; // n ইনপুট রাখবে, sum যোগফল রাখবে
+
+    cout<<"Input the number: "; // ইউজারকে ইনপুট চাওয়ার জন্য প্রম্পট দেখানো
+    cin>>n; // ইউজার থেকে সংখ্যা ইনপুট নেওয়া
+
+    while(n != 0) // যতক্ষণ n শূন্য না হচ্ছে ততক্ষণ লুপ চলবে
     {
-        int digit = n % 10;
-        sum = sum + digit;
-        n = n/10;
+        int digit = n % 10; // সংখ্যার শেষ অঙ্ক বের করা
+        sum = sum + digit;  // সেই অঙ্ককে sum-এ যোগ করা
+        n = n/10;           // সংখ্যাকে ১০ দিয়ে ভাগ করে শেষ অঙ্ক বাদ দেওয়া
     }
-    cout<<"Digit sum is: "<<sum<<endl;
-    return 0;
+
+    cout<<"Digit sum is: "<<sum<<endl; // যোগফল দেখানো
+
+    return 0; // প্রোগ্রাম সফলভাবে শেষ
 }
