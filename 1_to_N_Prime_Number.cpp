@@ -1,29 +1,31 @@
-#include<bits/stdc++.h>
-using namespace std;
+#include<bits/stdc++.h> // সব ধরনের standard লাইব্রেরি ইনক্লুড করা হয়েছে
+using namespace std;   // standard namespace ব্যবহার করা হয়েছে
+
 int main ()
 {
-    int n, count=0;
-    cin>>n;
-    for(int i=1; i<=n; i++)
+    int n, count=0;     // n ইনপুট নেওয়ার জন্য এবং count প্রাইম চেক করার জন্য ব্যবহার হবে
+    cin>>n;             // ইউজার থেকে n ইনপুট নেওয়া হচ্ছে
+
+    for(int i=1; i<=n; i++) // ১ থেকে n পর্যন্ত প্রতিটি সংখ্যা নিয়ে কাজ করা হবে
     {
-        for(int j=2; j<i; j++)
+        count = 0;          // প্রতিবার নতুন সংখ্যার জন্য count রিসেট করা হচ্ছে
+
+        for(int j=2; j<i; j++) // ২ থেকে i-1 পর্যন্ত চেক করা হচ্ছে
         {
-            if(i % j==0)
+            if(i % j==0)       // যদি i সংখ্যা j দিয়ে বিভাজ্য হয়
             {
-                count++;
+                count++;       // তাহলে count বাড়ানো হচ্ছে (মানে i প্রাইম নয়)
             }
         }
-        if(count==0)
-        {
-            cout<<i<<" Prime"<<endl;
-        }else{
-            cout<<i<<" Not Prime"<<endl;
 
+        if(count==0)           // যদি count 0 থাকে, অর্থাৎ কোনো ভাগকারী মেলেনি
+        {
+            cout<<i<<" Prime"<<endl; // তাহলে i একটি প্রাইম সংখ্যা
+        }
+        else
+        {
+            cout<<i<<" Not Prime"<<endl; // না হলে প্রাইম নয়
         }
     }
-    
-    
-    
-    
-    return 0;
+    return 0; // প্রোগ্রামের শেষ
 }
